@@ -8,7 +8,10 @@ for(var i=0;i<10000;i++){
 function isOrdered(o){
 	var last;
 	var order=true;
-	for(var key in o){
+	var keys=Object.keys(o);
+	var key;
+	for(var i=0;i<keys.length;i++){
+		key=keys[i];
 		if(last===undefined){
 			last=parseInt(key);
 		}else{
