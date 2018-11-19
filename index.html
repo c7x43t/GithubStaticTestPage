@@ -1,1 +1,21 @@
 <h1>Hello</h1>
+<script>
+var o={};
+for(var i=0;i<100;i++){o[Math.random()*1e8>>>0]=Math.random()}
+function isOrdered(o){
+	var last;
+	var order=true;
+	for(var key in o){
+		if(last===undefined){
+			last=parseInt(key);
+		}else{
+			order=order&&last<parseInt(key);
+			last=parseInt(key)
+		}
+	}
+	return order;
+}
+var div=document.createElement("div");
+div.textContent="Order is preserved: "+isOrdered(o);
+document.getElementsByTagName("body")[0].appendChild(div);
+</script>
