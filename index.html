@@ -1,7 +1,10 @@
 <h1>Hello</h1>
 <script>
-var o={};
-for(var i=0;i<100;i++){o[Math.random()*1e8>>>0]=Math.random()}
+var o={};var a=[];
+for(var i=0;i<10000;i++){
+	o[Math.random()*1e8>>>0]=Math.random()
+	a[Math.random()*1e8>>>0]=Math.random()
+}
 function isOrdered(o){
 	var last;
 	var order=true;
@@ -16,6 +19,6 @@ function isOrdered(o){
 	return order;
 }
 var div=document.createElement("div");
-div.textContent="Order is preserved: "+isOrdered(o);
+div.textContent="Order is preserved (Object): "+isOrdered(o)+" | Order is preserved (Array): "+isOrdered(a);
 document.getElementsByTagName("body")[0].appendChild(div);
 </script>
